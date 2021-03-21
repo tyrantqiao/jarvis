@@ -4,9 +4,9 @@ spring:
     druid:
       db-type: com.alibaba.druid.pool.DruidDataSource
       driverClassName: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
-      url: jdbc:log4jdbc:mysql://${DB_HOST:localhost}:${DB_PORT:3306}/${DB_NAME:eladmin}?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false
-      username: ${DB_USER:root}
-      password: ${DB_PWD:123456}
+      url: jdbc:log4jdbc:mysql://${DB_HOST}:${DB_PORT}/${DB_NAME}?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false
+      username: ${DB_USER}
+      password: ${DB_PWD}
       # 初始连接数
       initial-size: 5
       # 最小连接数
@@ -48,6 +48,30 @@ spring:
         wall:
           config:
             multi-statement-allow: true
+  redis:
+    #    以下三个参数是redis单点，哨兵的那种
+    #    database: ${REDIS_DB:0}
+    #    host: ${SPRING_REDIS_HOST}
+    #    port: ${SPRING_REDIS_PORT}
+    password: ${SPRING_REDIS_PASSWORD}
+    cluster:
+      nodes: ${SPRING_REDIS_HOST}:6379,${SPRING_REDIS_HOST}:6378,${SPRING_REDIS_HOST}:6377,${SPRING_REDIS_HOST}:6376,${SPRING_REDIS_HOST}:6375,${SPRING_REDIS_HOST}:6374
+      max-redirects: 6
+    jedis:
+      pool:
+        max-wait: 3000
+        max-idle: 50
+        min-idle: 5
+
+DB_HOST: ENC(ENS4eTDJsSL7qrmbrUMjGhKJc/wCF2crm7XqkO/1bKvjnxZRrEqou1XG3/jy88au)
+DB_PORT: ENC(7xWhYmZ0ojmOgpXvdvG5O8SbSeExsCwdA3QEJJZOLQ3G1jwQdBmA31aBKiGz6kfh)
+DB_NAME: ENC(MNimahJY5PSC3SaB8eMxsRmIVCZiGq2Qp1i6SchFvWQTm0KzZrObAStDSvr/rzcZ)
+DB_USER: ENC(RoS4dNku0Hu9tRUoVUWI3oq82iUqa7SOEVX6PripQNVrfn1tSrKE9yhzfRCka4XS)
+DB_PWD: ENC(hGwuwrBItyapqJ8tnHX0q1jk4NxcGPRIyYwr1v8qgsw46RzvqjLCJtnmZQDaPdCG)
+SPRING_REDIS_HOST: ENC(ENS4eTDJsSL7qrmbrUMjGhKJc/wCF2crm7XqkO/1bKvjnxZRrEqou1XG3/jy88au)
+SPRING_REDIS_PORT: ENC(HmaDAZOmUb3ewb/6+luaMqdiWbxHaPLGQSq6ffS+wcA4fYXfi5sD/QErlbPsCV2f)
+SPRING_REDIS_PASSWORD: ENC(hGwuwrBItyapqJ8tnHX0q1jk4NxcGPRIyYwr1v8qgsw46RzvqjLCJtnmZQDaPdCG)
+
 
 # 登录相关配置
 login:
@@ -116,3 +140,8 @@ file:
   # 文件大小 /M
   maxSize: 100
   avatarMaxSize: 5
+#  加解密内容的沙子，加密解密的关键钥匙，通过命令行启动，避免上传到服务器上导致被破解
+# 启动命令为： java -Djasypt.encryptor.password="password" -jar my-application.jar
+#jasypt:
+#  encryptor:
+#    password:
