@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>me.zhengjie</groupId>
+    <groupId>com.tyrantqiao</groupId>
     <artifactId>eladmin</artifactId>
     <packaging>pom</packaging>
     <version>2.6</version>
@@ -15,6 +15,7 @@
         <module>eladmin-system</module>
         <module>eladmin-tools</module>
         <module>eladmin-generator</module>
+        <module>jarvis-todo</module>
     </modules>
 
     <name>EL-ADMIN 后台管理</name>

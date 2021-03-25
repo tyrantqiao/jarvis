@@ -54,14 +54,17 @@ spring:
     #    host: ${SPRING_REDIS_HOST}
     #    port: ${SPRING_REDIS_PORT}
     password: ${SPRING_REDIS_PASSWORD}
+    #    链接超时时间
+    timeout: 5000ms
     cluster:
       nodes: ${SPRING_REDIS_HOST}:6379,${SPRING_REDIS_HOST}:6378,${SPRING_REDIS_HOST}:6377,${SPRING_REDIS_HOST}:6376,${SPRING_REDIS_HOST}:6375,${SPRING_REDIS_HOST}:6374
-      max-redirects: 6
     jedis:
       pool:
-        max-wait: 3000
-        max-idle: 50
+        #        线程最大阻塞等待时间
+        max-wait: -1ms
+        max-idle: 100
         min-idle: 5
+        max-active: 300
 
 DB_HOST: ENC(ENS4eTDJsSL7qrmbrUMjGhKJc/wCF2crm7XqkO/1bKvjnxZRrEqou1XG3/jy88au)
 DB_PORT: ENC(7xWhYmZ0ojmOgpXvdvG5O8SbSeExsCwdA3QEJJZOLQ3G1jwQdBmA31aBKiGz6kfh)
@@ -69,7 +72,6 @@ DB_NAME: ENC(MNimahJY5PSC3SaB8eMxsRmIVCZiGq2Qp1i6SchFvWQTm0KzZrObAStDSvr/rzcZ)
 DB_USER: ENC(RoS4dNku0Hu9tRUoVUWI3oq82iUqa7SOEVX6PripQNVrfn1tSrKE9yhzfRCka4XS)
 DB_PWD: ENC(hGwuwrBItyapqJ8tnHX0q1jk4NxcGPRIyYwr1v8qgsw46RzvqjLCJtnmZQDaPdCG)
 SPRING_REDIS_HOST: ENC(ENS4eTDJsSL7qrmbrUMjGhKJc/wCF2crm7XqkO/1bKvjnxZRrEqou1XG3/jy88au)
-SPRING_REDIS_PORT: ENC(HmaDAZOmUb3ewb/6+luaMqdiWbxHaPLGQSq6ffS+wcA4fYXfi5sD/QErlbPsCV2f)
 SPRING_REDIS_PASSWORD: ENC(hGwuwrBItyapqJ8tnHX0q1jk4NxcGPRIyYwr1v8qgsw46RzvqjLCJtnmZQDaPdCG)
 
 

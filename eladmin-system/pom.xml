@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>eladmin</artifactId>
-        <groupId>me.zhengjie</groupId>
+        <groupId>com.tyrantqiao</groupId>
         <version>2.6</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -21,12 +21,12 @@
     <dependencies>
         <!-- 代码生成模块 -->
         <dependency>
-            <groupId>me.zhengjie</groupId>
+            <groupId>com.tyrantqiao</groupId>
             <artifactId>eladmin-generator</artifactId>
             <version>2.6</version>
             <exclusions>
                 <exclusion>
-                    <groupId>me.zhengjie</groupId>
+                    <groupId>com.tyrantqiao</groupId>
                     <artifactId>eladmin-common</artifactId>
                 </exclusion>
             </exclusions>
@@ -34,16 +34,23 @@
 
         <!-- tools 模块包含了 common 和 logging 模块 -->
         <dependency>
-            <groupId>me.zhengjie</groupId>
+            <groupId>com.tyrantqiao</groupId>
             <artifactId>eladmin-tools</artifactId>
             <version>2.6</version>
         </dependency>
 
+        <!-- jarvis todo模块-->
+        <dependency>
+            <groupId>com.tyrantqiao</groupId>
+            <artifactId>jarvis-todo</artifactId>
+            <version>2.6</version>
+        </dependency>
+
         <!-- Spring boot websocket -->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-websocket</artifactId>
-		</dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-websocket</artifactId>
+        </dependency>
 
         <!-- jwt -->
         <dependency>
@@ -69,16 +76,16 @@
         </dependency>
 
         <!-- linux的管理 -->
-		<dependency>
-			<groupId>ch.ethz.ganymed</groupId>
-			<artifactId>ganymed-ssh2</artifactId>
-			<version>build210</version>
-		</dependency>
-		<dependency>
-			<groupId>com.jcraft</groupId>
-			<artifactId>jsch</artifactId>
-			<version>0.1.55</version>
-		</dependency>
+        <dependency>
+            <groupId>ch.ethz.ganymed</groupId>
+            <artifactId>ganymed-ssh2</artifactId>
+            <version>build210</version>
+        </dependency>
+        <dependency>
+            <groupId>com.jcraft</groupId>
+            <artifactId>jsch</artifactId>
+            <version>0.1.55</version>
+        </dependency>
 
         <!-- 获取系统信息 -->
         <dependency>
