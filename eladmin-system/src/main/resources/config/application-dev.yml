@@ -58,6 +58,7 @@ spring:
     timeout: 5000ms
     cluster:
       nodes: ${SPRING_REDIS_HOST}:6379,${SPRING_REDIS_HOST}:6378,${SPRING_REDIS_HOST}:6377,${SPRING_REDIS_HOST}:6376,${SPRING_REDIS_HOST}:6375,${SPRING_REDIS_HOST}:6374
+      max-redirects: 3
     jedis:
       pool:
         #        线程最大阻塞等待时间
