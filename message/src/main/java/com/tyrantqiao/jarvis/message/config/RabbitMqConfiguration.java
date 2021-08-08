@@ -20,7 +20,7 @@ public class RabbitMqConfiguration {
 
     @Bean
     public Queue helloWorldQueue() {
-        return new Queue("helloworld");
+        return new Queue("helloworld", true, false, false);
     }
 
     @Bean
@@ -28,7 +28,7 @@ public class RabbitMqConfiguration {
         CachingConnectionFactory cachingConnectionFactory = new CachingConnectionFactory();
         cachingConnectionFactory.setAddresses("127.0.0.1");
         cachingConnectionFactory.setUsername("root");
-        cachingConnectionFactory.setPassword("123456");
+        cachingConnectionFactory.setPassword("%5QWERzxc");
         cachingConnectionFactory.setPublisherReturns(true);
         return cachingConnectionFactory;
     }
