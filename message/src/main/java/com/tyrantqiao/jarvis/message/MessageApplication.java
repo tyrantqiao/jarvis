@@ -5,6 +5,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
  * jarvis message
+ *
+ * @author tyrantqiao
+ * @date 2021年8月18日 07:26:49
  */
 @SpringBootApplication
 public class MessageApplication {
