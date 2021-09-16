@@ -14,6 +14,12 @@ import org.springframework.web.bind.annotation.RestController;
  * <p>
  * 创建时间： 2021/7/11 20:07
  * 博客地址： <a href="https://tyrantqiao.com">详情戳我(╯‵□′)╯︵┻━┻)</a>
+ * <p>
+ * 请求报文参考如下内容
+ * <p>
+ * http://localhost:6666/message/hello?queue=helloworld&username=qiao
+ * <p>
+ * http://localhost:6666/message/receive?queue=helloworld
  *
  * @author tyrantqiao
  * @version 1.0
